@@ -1,0 +1,44 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+
+.navbar-expand-lg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+    .navbar-brand {
+        @include fs ($header, 35px, 600, $ff1);
+        span {
+            color: #ff014f;
+        }
+    }
+    .navbar-nav {
+        .nav-link {
+            @include fs ($header, 16px, 400, $ff3);
+            padding-right: 0;
+            padding-left: 0;
+            text-transform: uppercase;
+            margin-left: 20px;
+            transition: all linear .3s;
+            -moz-transition: all linear .3s;
+            -ms-transition: all linear .3s;
+            -o-transition: all linear .3s;
+            -webkit-transition: all linear .3s;
+            &:hover {
+                color: $hover;
+            }
+        }
+    }
+}
+/** NavBar Style End **/
+
+.sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1030;
+}

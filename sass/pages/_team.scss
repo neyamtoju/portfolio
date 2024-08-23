@@ -1,0 +1,84 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+#team {
+    background-color: $bg;
+    padding: 120px 0 120px;
+    .common-header {
+        text-align: center;
+        h2 {
+            @include fs ($header, 60px, 400, $ff2);
+            text-transform: uppercase;
+            text-shadow: $pera 2px 5px;
+            margin-bottom: 60px;
+        }
+    }
+    .team-item{
+        text-align: center;
+        .team-img {
+            position: relative;
+            width: 400px;
+            height: 450px;
+            overflow: hidden;
+            margin: 0 auto;
+            transition: all linear .3s;
+            &:hover {
+                .overlay {
+                    -webkit-transform: scale(1);
+                    -ms-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .overlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                display: flex;
+                background: rgba(0, 0, 0, 0.6);
+                align-items: center;
+                justify-content: center;
+                -webkit-transform: scale(0);
+                -ms-transform: scale(0);
+                transform: scale(0);
+                -webkit-transition: all linear .3s;
+                -o-transition: all linear .3s;
+                transition: all linear .3s;
+                button {
+                    @include fs ($header, 16px, 500, $ff3);
+                    margin-top: 30px;
+                    text-transform: uppercase;
+                    padding: 10px 20px;
+                    background-color: $bg;
+                    text-shadow: $pera 0 2px;
+                    box-shadow: 0px 3px 0px $bg;
+                    transition: all linear .3s;
+                    -moz-transition: all linear .3s;
+                    -ms-transition: all linear .3s;
+                    -o-transition: all linear .3s;
+                    -webkit-transition: all linear .3s;
+                    &:hover {
+                        background-color: $color;
+                        transform: scale(0.9);
+                    }
+                }
+            }
+        }
+        h5 {
+            @include fs ($header, 16px, 500, $ff3);
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+        h4 {
+            @include fs ($header, 20px, 500, $ff1);
+            text-transform: capitalize;
+            margin-top: 15px;
+        }
+    }
+}

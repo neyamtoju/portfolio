@@ -1,0 +1,107 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+#experiences {
+    background-color: $color;
+    padding: 120px 0 120px;
+    .common-header {
+        text-align: center;
+        h2 {
+            @include fs ($header, 60px, 400, $ff2);
+            text-transform: uppercase;
+            text-shadow: $pera 2px 5px;
+            margin-bottom: 60px;
+        }
+    }
+    .exper-lt {
+        h3 {
+            @include fs ($hover, 26px, 500, $ff3);
+            text-transform: capitalize;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+        .bar{
+            @include fs ($bg, 16px, 500, $ff1);
+            background-color: $hover;
+            padding: 5px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            &::before{
+                content:  attr(data-skill);
+                background-color: #f3b0ff;
+                display: inline-block;
+                padding: 5px 0 5px 10px;
+                border-radius: inherit;
+                animation: load 2s 0s;
+                -webkit-animation: load 2s 0s;
+                -moz-animation: load 2s 0s;
+                -o-animation: load 2s 0s;
+            }
+        }
+        .bar.one::before{
+            background-color: #E34C26;
+        }
+        .bar.two::before{
+            background-color: #2965f1;
+        }
+        .bar.three::before{
+            background-color: #CD6799;
+        }
+        .bar.four::before{
+            background-color: #F0DB4F;
+        }
+        .bar.five::before{
+            background-color: #61DBFB;
+        }
+        .bar.six::before{
+            background-color: #563d7c;
+        }
+        .bar.seven::before{
+            background-color: #8993be;
+        }
+        .bar.eight::before{
+            background-color: #F29111;
+        }
+        .bar.nine::before{
+            background-color: #F05340;
+        }
+          
+        .bar.learning::before{
+            width: calc(20% - 10px);
+        }
+        .bar.basic::before{
+            width: calc(40% - 10px);
+        }
+        .bar.intermediate::before{
+            width: calc(60% - 10px);
+        }
+        .bar.advanced::before{
+            width: calc(80% - 10px);
+        }
+        .bar.expert::before{
+            width: calc(100% - 10px);
+        }
+    }
+}
+
+
+@keyframes load{
+    from {
+      width: 0%
+    }
+  }
+  @-webkit-keyframes load{
+    from {
+      width: 0%
+    }
+  }
+  @-moz-keyframes load{
+    from {
+      width: 0%
+    }
+  }
+  @-o-keyframes load{
+    from {
+      width: 0%
+    }
+  }

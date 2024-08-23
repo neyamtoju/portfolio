@@ -1,0 +1,90 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+#service {
+    background-color: $bg;
+    padding: 120px 0 120px;
+    .common-header {
+        text-align: center;
+        h2 {
+            @include fs ($header, 60px, 400, $ff2);
+            text-transform: uppercase;
+            text-shadow: $pera 2px 5px;
+            margin-bottom: 60px;
+        }
+    }
+    .serv-item {
+        margin-top: 60px;
+        padding: 50px 20px 15px;
+        background-color: $color;
+        position: relative;
+        transition: all linear .3s;
+        -moz-transition: all linear .3s;
+        -ms-transition: all linear .3s;
+        -o-transition: all linear .3s;
+        -webkit-transition: all linear .3s;
+        :hover {
+            color: $hover;
+            box-shadow: 0px 3px 0px $bg;
+            transform: scale(0.9);
+        }
+        .serv-icon {
+            position: absolute;
+            width: 69px;
+            height: 69px;
+            border-radius: 50%;
+            background-color: $color;
+            border: 2px solid $header;
+            left: 33.5%;
+            top: -30px;
+            transform: translateX(50%);
+            -moz-transform: translateX(50%);
+            -ms-transform: translateX(50%);
+            -o-transform: translateX(50%);
+            -webkit-transform: translateX(50%);
+            transition: all linear .3s;
+            -moz-transition: all linear .3s;
+            -ms-transition: all linear .3s;
+            -o-transition: all linear .3s;
+            -webkit-transition: all linear .3s;
+            img {
+                margin-top: 20px;
+            }
+            &:hover {
+                background-color: $hover;
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                left: -4px;
+                top: -4px;
+                width: 72px;
+                height: 72px;
+                border-radius: 50%;
+                border: 1px solid $color;
+                &:hover {
+                    border-color: $hover;
+                }
+            }
+            &::before {
+                position: absolute;
+                content: '';
+                left: -4px;
+                top: -4px;
+                width: 71px;
+                height: 71px;
+                border: 3px solid $header;
+                border-radius: 50%;
+            }
+        }
+        h4 {
+            @include fs ($pera, 20px, 500, $ff3);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        p {
+            @include fs ($pera, 13px, 400, $ff4);
+            line-height: 24px;
+        }
+    }
+}
